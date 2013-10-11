@@ -95,7 +95,7 @@ echo "var lng = " .$lng.";\n";
 echo "var access_token = '" .$_SESSION['oauth2']['oauth_token']."';\n";
 echo "var  friends = " .json_encode($_SESSION['friends']['users']).";\n";
 ?>
-
+    
 function SendFrom(lat, lng)
 {
 	nearby_timeline(lat, lng, access_token);
@@ -158,5 +158,6 @@ onclick="return showCalendar('EndTime', 'y.mm.dd');"  style="width:120px"/>
 	
 </div>
 
-</body>
+    </body>
 </html>
+    

@@ -102,10 +102,10 @@ function getTime(uid)
 {
 	var start = document.getElementById("StartTime").value;
 	var end = document.getElementById("EndTime").value;
-	
-	if(start != null &&  end != null)
+
+	if(start != "" &&  end != "" && start <= end)
 	{
-			ClearNearby();
+			
   $.getJSON("https://api.weibo.com/2/place/user_timeline.json?callback=?",
   {
     uid:uid,
@@ -113,9 +113,11 @@ function getTime(uid)
 	access_token:access_token
   },
   function (data) {
+      console.log(data.data.statuses);
   if(data.data.statuses != null)
   {
   var count = 0;
+      ClearNearby();
     $.each(data.data.statuses, function(i, statuse){
 	if(MakeTime(statuse.created_at, start, end) == 1)
 	{
@@ -149,7 +151,7 @@ function getTime(uid)
 	}
   });
 	}
-	else {alert("请先输入日期！");}
+	else if(start > end) alert("时间输入有误！");else {alert("请先输入日期！");}
 	
 }
 
@@ -181,7 +183,7 @@ function MakeTime(t, start, end)
 
 function SendMap()
 {
-$.get('http://tp1.sinaimg.cn/2098407280/50/39997978938/1?callback?',
+$.get('http://tp3.sinaimg.cn/3268777922/180/5676380732/1?callback',
 function(data){
 console.log(data);
 document.write(data);

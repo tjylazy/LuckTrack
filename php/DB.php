@@ -8,7 +8,7 @@ function InserIntoDB($text, $ori_img, $time, $zhuye, $yonghuming, $touxiangsrc, 
 
 	if(is_array($data) != 1)
 	{		
-		$sql = "INSERT INTO `app_lengyeyoulan`.`user_timeline` (`text`, `ori_img`, `time`, `zhuye`, `yonghuming`, `touxiangsrc`, `lat`, `lng`)
+		$sql = "INSERT INTO `app_luckytrace`.`user_timeline` (`text`, `ori_img`, `time`, `zhuye`, `yonghuming`, `touxiangsrc`, `lat`, `lng`)
 		VALUES ('".$text."', '".$ori_img."', '".$time."', '".$zhuye."', '".$yonghuming."', '".$touxiangsrc."', '".$lat."', '".$lng."');";
 		
 		$mysql->runSql( $sql );

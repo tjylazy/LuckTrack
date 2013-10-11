@@ -1,17 +1,17 @@
 <?php
 function AuthOrNot()
 {
-	//从POST过来的signed_request中提取oauth2信息
+	//浠嶱OST杩囨潵鐨剆igned_request涓彁鍙杘auth2淇℃伅
 	if(!empty($_REQUEST["signed_request"])){
 		$o = new SaeTOAuthV2( WB_AKEY , WB_SKEY  );
 		$data=$o->parseSignedRequest($_REQUEST["signed_request"]);
 		if($data=='-2'){
-			 die('签名错误!');
+			 die('绛惧悕閿欒!');
 		}else{
 			$_SESSION['oauth2']=$data;
 		}
 	}
-	//判断用户是否授权
+	//鍒ゆ柇鐢ㄦ埛鏄惁鎺堟潈
 	if (empty($_SESSION['oauth2']["user_id"])) {
 			include "auth.php";
 			exit;

@@ -1,6 +1,6 @@
 <?php
 /*
-	apiÎÄµµ
+	apiæ–‡æ¡£
 	http://open.weibo.com/wiki/API%E6%96%87%E6%A1%A3_V2
 */
 class sina_api
@@ -12,15 +12,15 @@ class sina_api
 	function user_timeline($uid = NULL, $count = 100, $page = NULL, $feature = 1, $trim_user = 1)
 	{
 	/*
-		uid				false	int64	ÐèÒª²éÑ¯µÄÓÃ»§ID¡£
-		screen_name	false	string	ÐèÒª²éÑ¯µÄÓÃ»§êÇ³Æ¡£
-		since_id			false	int64	ÈôÖ¸¶¨´Ë²ÎÊý£¬Ôò·µ»ØID±Èsince_id´óµÄÎ¢²©£¨¼´±Èsince_idÊ±¼äÍíµÄÎ¢²©£©£¬Ä¬ÈÏÎª0¡£
-		max_id			false	int64	ÈôÖ¸¶¨´Ë²ÎÊý£¬Ôò·µ»ØIDÐ¡ÓÚ»òµÈÓÚmax_idµÄÎ¢²©£¬Ä¬ÈÏÎª0¡£
-		count			false	int	µ¥Ò³·µ»ØµÄ¼ÇÂ¼ÌõÊý£¬×î´ó²»³¬¹ý100£¬Ä¬ÈÏÎª20¡£
-		page			false	int	·µ»Ø½á¹ûµÄÒ³Âë£¬Ä¬ÈÏÎª1¡£
-		base_app		false	int	ÊÇ·ñÖ»»ñÈ¡µ±Ç°Ó¦ÓÃµÄÊý¾Ý¡£0Îª·ñ£¨ËùÓÐÊý¾Ý£©£¬1ÎªÊÇ£¨½öµ±Ç°Ó¦ÓÃ£©£¬Ä¬ÈÏÎª0¡£
-		feature			false	int	¹ýÂËÀàÐÍID£¬0£ºÈ«²¿¡¢1£ºÔ­´´¡¢2£ºÍ¼Æ¬¡¢3£ºÊÓÆµ¡¢4£ºÒôÀÖ£¬Ä¬ÈÏÎª0¡£
-		trim_user		false	int	·µ»ØÖµÖÐuser×Ö¶Î¿ª¹Ø£¬0£º·µ»ØÍêÕûuser×Ö¶Î¡¢1£ºuser×Ö¶Î½ö·µ»Øuser_id£¬Ä¬ÈÏÎª0¡£
+		uid				false	int64	éœ€è¦æŸ¥è¯¢çš„ç”¨æˆ·IDã€‚
+		screen_name	false	string	éœ€è¦æŸ¥è¯¢çš„ç”¨æˆ·æ˜µç§°ã€‚
+		since_id			false	int64	è‹¥æŒ‡å®šæ­¤å‚æ•°ï¼Œåˆ™è¿”å›žIDæ¯”since_idå¤§çš„å¾®åšï¼ˆå³æ¯”since_idæ—¶é—´æ™šçš„å¾®åšï¼‰ï¼Œé»˜è®¤ä¸º0ã€‚
+		max_id			false	int64	è‹¥æŒ‡å®šæ­¤å‚æ•°ï¼Œåˆ™è¿”å›žIDå°äºŽæˆ–ç­‰äºŽmax_idçš„å¾®åšï¼Œé»˜è®¤ä¸º0ã€‚
+		count			false	int	å•é¡µè¿”å›žçš„è®°å½•æ¡æ•°ï¼Œæœ€å¤§ä¸è¶…è¿‡100ï¼Œé»˜è®¤ä¸º20ã€‚
+		page			false	int	è¿”å›žç»“æžœçš„é¡µç ï¼Œé»˜è®¤ä¸º1ã€‚
+		base_app		false	int	æ˜¯å¦åªèŽ·å–å½“å‰åº”ç”¨çš„æ•°æ®ã€‚0ä¸ºå¦ï¼ˆæ‰€æœ‰æ•°æ®ï¼‰ï¼Œ1ä¸ºæ˜¯ï¼ˆä»…å½“å‰åº”ç”¨ï¼‰ï¼Œé»˜è®¤ä¸º0ã€‚
+		feature			false	int	è¿‡æ»¤ç±»åž‹IDï¼Œ0ï¼šå…¨éƒ¨ã€1ï¼šåŽŸåˆ›ã€2ï¼šå›¾ç‰‡ã€3ï¼šè§†é¢‘ã€4ï¼šéŸ³ä¹ï¼Œé»˜è®¤ä¸º0ã€‚
+		trim_user		false	int	è¿”å›žå€¼ä¸­userå­—æ®µå¼€å…³ï¼Œ0ï¼šè¿”å›žå®Œæ•´userå­—æ®µã€1ï¼šuserå­—æ®µä»…è¿”å›žuser_idï¼Œé»˜è®¤ä¸º0ã€‚
 	*/
 	
 		$getjson = $this->api_url . 'statuses/user_timeline.json?';
@@ -46,12 +46,12 @@ class sina_api
 	function place_user_timeline($uid = NULL, $count = 20, $page = NULL)
 	{
 	/*
-		uid			true	int64	ÐèÒª²éÑ¯µÄÓÃ»§ID¡£
-		since_id		false	int64	ÈôÖ¸¶¨´Ë²ÎÊý£¬Ôò·µ»ØID±Èsince_id´óµÄÎ¢²©£¨¼´±Èsince_idÊ±¼äÍíµÄÎ¢²©£©£¬Ä¬ÈÏÎª0¡£
-		max_id		false	int64	ÈôÖ¸¶¨´Ë²ÎÊý£¬Ôò·µ»ØIDÐ¡ÓÚ»òµÈÓÚmax_idµÄÎ¢²©£¬Ä¬ÈÏÎª0¡£
-		count		false	int	µ¥Ò³·µ»ØµÄ¼ÇÂ¼ÌõÊý£¬×î´óÎª50£¬Ä¬ÈÏÎª20¡£
-		page		false	int	·µ»Ø½á¹ûµÄÒ³Âë£¬Ä¬ÈÏÎª1¡£
-		base_app	false	int	ÊÇ·ñÖ»»ñÈ¡µ±Ç°Ó¦ÓÃµÄÊý¾Ý¡£0Îª·ñ£¨ËùÓÐÊý¾Ý£©£¬1ÎªÊÇ£¨½öµ±Ç°Ó¦ÓÃ£©£¬Ä¬ÈÏÎª0¡£
+		uid			true	int64	éœ€è¦æŸ¥è¯¢çš„ç”¨æˆ·IDã€‚
+		since_id		false	int64	è‹¥æŒ‡å®šæ­¤å‚æ•°ï¼Œåˆ™è¿”å›žIDæ¯”since_idå¤§çš„å¾®åšï¼ˆå³æ¯”since_idæ—¶é—´æ™šçš„å¾®åšï¼‰ï¼Œé»˜è®¤ä¸º0ã€‚
+		max_id		false	int64	è‹¥æŒ‡å®šæ­¤å‚æ•°ï¼Œåˆ™è¿”å›žIDå°äºŽæˆ–ç­‰äºŽmax_idçš„å¾®åšï¼Œé»˜è®¤ä¸º0ã€‚
+		count		false	int	å•é¡µè¿”å›žçš„è®°å½•æ¡æ•°ï¼Œæœ€å¤§ä¸º50ï¼Œé»˜è®¤ä¸º20ã€‚
+		page		false	int	è¿”å›žç»“æžœçš„é¡µç ï¼Œé»˜è®¤ä¸º1ã€‚
+		base_app	false	int	æ˜¯å¦åªèŽ·å–å½“å‰åº”ç”¨çš„æ•°æ®ã€‚0ä¸ºå¦ï¼ˆæ‰€æœ‰æ•°æ®ï¼‰ï¼Œ1ä¸ºæ˜¯ï¼ˆä»…å½“å‰åº”ç”¨ï¼‰ï¼Œé»˜è®¤ä¸º0ã€‚
 	*/
 	
 		$getjson = $this->api_url . 'place/user_timeline.json?';
@@ -73,16 +73,16 @@ class sina_api
 	function place_nearby_timeline($lat = NULL, $long = NULL, $count = 50, $range = 2000, $sort = 0)
 	{
 	/*
-		lat			true	float	Î³¶È¡£ÓÐÐ§·¶Î§£º-90.0µ½+90.0£¬+±íÊ¾±±Î³¡£
-		long			true	float	¾­¶È¡£ÓÐÐ§·¶Î§£º-180.0µ½+180.0£¬+±íÊ¾¶«¾­¡£
-		range		false	int	ËÑË÷·¶Î§£¬µ¥Î»Ã×£¬Ä¬ÈÏ2000Ã×£¬×î´ó11132Ã×¡£
-		starttime	false	int	¿ªÊ¼Ê±¼ä£¬UnixÊ±¼ä´Á¡£
-		endtime	false	int	½áÊøÊ±¼ä£¬UnixÊ±¼ä´Á¡£
-		sort			false	int	ÅÅÐò·½Ê½¡£Ä¬ÈÏÎª0£¬°´Ê±¼äÅÅÐò£»Îª1Ê±°´ÓëÖÐÐÄµã¾àÀë½øÐÐÅÅÐò¡£
-		count		false	int	µ¥Ò³·µ»ØµÄ¼ÇÂ¼ÌõÊý£¬×î´óÎª50£¬Ä¬ÈÏÎª20¡£
-		page		false	int	·µ»Ø½á¹ûµÄÒ³Âë£¬Ä¬ÈÏÎª1¡£
-		base_app	false	int	ÊÇ·ñÖ»»ñÈ¡µ±Ç°Ó¦ÓÃµÄÊý¾Ý¡£0Îª·ñ£¨ËùÓÐÊý¾Ý£©£¬1ÎªÊÇ£¨½öµ±Ç°Ó¦ÓÃ£©£¬Ä¬ÈÏÎª0¡£
-		offset		false	int	´«ÈëµÄ¾­Î³¶ÈÊÇ·ñÊÇ¾ÀÆ«¹ý£¬0£ºÃ»¾ÀÆ«¡¢1£º¾ÀÆ«¹ý£¬Ä¬ÈÏÎª0¡£
+		lat			true	float	çº¬åº¦ã€‚æœ‰æ•ˆèŒƒå›´ï¼š-90.0åˆ°+90.0ï¼Œ+è¡¨ç¤ºåŒ—çº¬ã€‚
+		long			true	float	ç»åº¦ã€‚æœ‰æ•ˆèŒƒå›´ï¼š-180.0åˆ°+180.0ï¼Œ+è¡¨ç¤ºä¸œç»ã€‚
+		range		false	int	æœç´¢èŒƒå›´ï¼Œå•ä½ç±³ï¼Œé»˜è®¤2000ç±³ï¼Œæœ€å¤§11132ç±³ã€‚
+		starttime	false	int	å¼€å§‹æ—¶é—´ï¼ŒUnixæ—¶é—´æˆ³ã€‚
+		endtime	false	int	ç»“æŸæ—¶é—´ï¼ŒUnixæ—¶é—´æˆ³ã€‚
+		sort			false	int	æŽ’åºæ–¹å¼ã€‚é»˜è®¤ä¸º0ï¼ŒæŒ‰æ—¶é—´æŽ’åºï¼›ä¸º1æ—¶æŒ‰ä¸Žä¸­å¿ƒç‚¹è·ç¦»è¿›è¡ŒæŽ’åºã€‚
+		count		false	int	å•é¡µè¿”å›žçš„è®°å½•æ¡æ•°ï¼Œæœ€å¤§ä¸º50ï¼Œé»˜è®¤ä¸º20ã€‚
+		page		false	int	è¿”å›žç»“æžœçš„é¡µç ï¼Œé»˜è®¤ä¸º1ã€‚
+		base_app	false	int	æ˜¯å¦åªèŽ·å–å½“å‰åº”ç”¨çš„æ•°æ®ã€‚0ä¸ºå¦ï¼ˆæ‰€æœ‰æ•°æ®ï¼‰ï¼Œ1ä¸ºæ˜¯ï¼ˆä»…å½“å‰åº”ç”¨ï¼‰ï¼Œé»˜è®¤ä¸º0ã€‚
+		offset		false	int	ä¼ å…¥çš„ç»çº¬åº¦æ˜¯å¦æ˜¯çº åè¿‡ï¼Œ0ï¼šæ²¡çº åã€1ï¼šçº åè¿‡ï¼Œé»˜è®¤ä¸º0ã€‚
 	*/
 	
 		$getjson = $this->api_url . 'place/nearby_timeline.json?';
@@ -106,10 +106,10 @@ class sina_api
 	function friendships_friends_ids($uid = NULL, $count = 5000)
 	{
 	/*
-	uid				false	int64	ÐèÒª²éÑ¯µÄÓÃ»§UID¡£
-	screen_name	false	string	ÐèÒª²éÑ¯µÄÓÃ»§êÇ³Æ¡£
-	count			false	int	µ¥Ò³·µ»ØµÄ¼ÇÂ¼ÌõÊý£¬Ä¬ÈÏÎª500£¬×î´ó²»³¬¹ý5000¡£
-	cursor			false	int	·µ»Ø½á¹ûµÄÓÎ±ê£¬ÏÂÒ»Ò³ÓÃ·µ»ØÖµÀïµÄnext_cursor£¬ÉÏÒ»Ò³ÓÃprevious_cursor£¬Ä¬ÈÏÎª0¡£
+	uid				false	int64	éœ€è¦æŸ¥è¯¢çš„ç”¨æˆ·UIDã€‚
+	screen_name	false	string	éœ€è¦æŸ¥è¯¢çš„ç”¨æˆ·æ˜µç§°ã€‚
+	count			false	int	å•é¡µè¿”å›žçš„è®°å½•æ¡æ•°ï¼Œé»˜è®¤ä¸º500ï¼Œæœ€å¤§ä¸è¶…è¿‡5000ã€‚
+	cursor			false	int	è¿”å›žç»“æžœçš„æ¸¸æ ‡ï¼Œä¸‹ä¸€é¡µç”¨è¿”å›žå€¼é‡Œçš„next_cursorï¼Œä¸Šä¸€é¡µç”¨previous_cursorï¼Œé»˜è®¤ä¸º0ã€‚
 	*/
 		
 		$getjson = $this->api_url . 'friendships/friends/ids.json?';
@@ -130,9 +130,9 @@ class sina_api
 	function place_friends_timeline($count = 50, $type = 0)
 	{
 	/*
-	count	false	int	µ¥Ò³·µ»ØµÄ¼ÇÂ¼ÌõÊý£¬×î´óÎª50£¬Ä¬ÈÏÎª20¡£
-	page	false	int	·µ»Ø½á¹ûµÄÒ³Âë£¬Ä¬ÈÏÎª1¡£
-	type		false	int	¹ØÏµ¹ýÂË£¬0£º½ö·µ»Ø¹Ø×¢µÄ£¬1£º·µ»ØºÃÓÑµÄ£¬Ä¬ÈÏÎª0¡£
+	count	false	int	å•é¡µè¿”å›žçš„è®°å½•æ¡æ•°ï¼Œæœ€å¤§ä¸º50ï¼Œé»˜è®¤ä¸º20ã€‚
+	page	false	int	è¿”å›žç»“æžœçš„é¡µç ï¼Œé»˜è®¤ä¸º1ã€‚
+	type		false	int	å…³ç³»è¿‡æ»¤ï¼Œ0ï¼šä»…è¿”å›žå…³æ³¨çš„ï¼Œ1ï¼šè¿”å›žå¥½å‹çš„ï¼Œé»˜è®¤ä¸º0ã€‚
 	*/
 		
 		$getjson = $this->api_url . 'place/friends_timeline.json?';
